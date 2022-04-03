@@ -10,33 +10,23 @@ Java is a program that can run independently of any computer architecture and pl
 
 This project is built with Java-Maven. In order for the project to be compiled correctly, the Chrome Driver added to the project must be 100 or higher.
 
-#How to run JUnit test cases from the command line?
+# How to run JUnit test cases from the command line?
 
-Maven way
+With `maven`, you can run the following command to run all your test cases:
 
-If you use Maven, you can run the following command to run all your test cases:
-
+```bash
 mvn clean test
-Or you can run a particular test as below
+```
 
-mvn clean test -Dtest=your.package.TestClassName
-mvn clean test -Dtest=your.package.TestClassName#particularMethod
+Alternatively, you can run a particular test as below:
+
+```bash
+mvn clean test -Dtest=com.ciceksepeti.mizu.SigninTest#TC01LoginValidUsernameAndValidPassword -Dsurefire.useFile=false
+```
+
 If you would like to see the stack trace (if any) in the console instead of report files in the target\surefire-reports folder, set the user property surefire.useFile to false. For example:
 
-mvn clean test -Dtest=your.package.TestClassName -Dsurefire.useFile=false
-
-
-Normal way
-
-If you do not use Maven, or Gradle or Ant, you can follow the following way:
-
-First of all, you need to compile your test cases. For example (in Linux):
-
-javac -d /absolute/path/for/compiled/classes -cp /absolute/path/to/junit-4.12.jar /absolute/path/to/TestClassName.java
-
-Then run your test cases. For example:
-
-java -cp /absolute/path/for/compiled/classes:/absolute/path/to/junit-4.12.jar:/absolute/path/to/hamcrest-core-1.3.jar org.junit.runner.JUnitCore your.package.TestClassName
-
-
+```bash
+mvn clean test -Dtest=com.ciceksepeti.mizu.SigninTest#TC01LoginValidUsernameAndValidPassword -Dsurefire.useFile=false
+```
 
