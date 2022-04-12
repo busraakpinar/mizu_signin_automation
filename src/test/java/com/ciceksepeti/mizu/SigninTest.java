@@ -76,11 +76,11 @@ public class SigninTest {
 
         WebElement setEmailAdress = driver.findElement(By.xpath("//input[@id='EmailLogin']"));
         setEmailAdress.click();
-        setEmailAdress.sendKeys("clarklisa686@gmail.com");
+        setEmailAdress.sendKeys("set your valid e-mail");
 
         WebElement setPassword = driver.findElement(By.xpath("//input[@id='Password']"));
         setPassword.click();
-        setPassword.sendKeys("T1e2s3t4.");
+        setPassword.sendKeys("set your valid password");
 
         WebElement signinButton = driver.findElement(By.xpath("//button[text()='Sign In']"));
         signinButton.click();
@@ -105,7 +105,7 @@ public class SigninTest {
 
         WebElement setEmailAdress = driver.findElement(By.xpath("//input[@id='EmailLogin']"));
         setEmailAdress.click();
-        setEmailAdress.sendKeys("clarklisa686@gmail.com");
+        setEmailAdress.sendKeys("set your valid e-mail");
 
         WebElement setPassword = driver.findElement(By.xpath("//input[@id='Password']"));
         setPassword.click();
@@ -129,11 +129,11 @@ public class SigninTest {
 
         WebElement setEmailAdress = driver.findElement(By.xpath("//input[@id='EmailLogin']"));
         setEmailAdress.click();
-        setEmailAdress.sendKeys("clarklisa686868@gmail.com");
+        setEmailAdress.sendKeys("invalidemail@gmail.com");
 
         WebElement setPassword = driver.findElement(By.xpath("//input[@id='Password']"));
         setPassword.click();
-        setPassword.sendKeys("T1e2s3t4.");
+        setPassword.sendKeys("set your valid password");
 
         WebElement signinButton = driver.findElement(By.xpath("//button[text()='Sign In']"));
         signinButton.click();
@@ -153,7 +153,7 @@ public class SigninTest {
 
         WebElement setEmailAdress = driver.findElement(By.xpath("//input[@id='EmailLogin']"));
         setEmailAdress.click();
-        setEmailAdress.sendKeys("clarklisa686868@gmail.com");
+        setEmailAdress.sendKeys("invalidemail@gmail.com");
 
         WebElement setPassword = driver.findElement(By.xpath("//input[@id='Password']"));
         setPassword.click();
@@ -181,7 +181,7 @@ public class SigninTest {
 
         WebElement setPassword = driver.findElement(By.xpath("//input[@id='Password']"));
         setPassword.click();
-        setPassword.sendKeys("T1e2s3t4.");
+        setPassword.sendKeys("set your valid password");
 
         WebElement signinButton = driver.findElement(By.xpath("//button[text()='Sign In']"));
         signinButton.click();
@@ -200,7 +200,7 @@ public class SigninTest {
 
         WebElement setEmailAdress = driver.findElement(By.xpath("//input[@id='EmailLogin']"));
         setEmailAdress.click();
-        setEmailAdress.sendKeys("clarklisa686@gmail.com");
+        setEmailAdress.sendKeys("set your valid e-mail");
 
         WebElement setPassword = driver.findElement(By.xpath("//input[@id='Password']"));
         setPassword.click();
@@ -263,11 +263,11 @@ public class SigninTest {
                 
         WebElement setEmailForFacebook = driver.findElement(By.id("email"));
         setEmailForFacebook.click();
-        setEmailForFacebook.sendKeys("notstick61@gmail.com");
+        setEmailForFacebook.sendKeys("set your valid e-mail");
 
         WebElement setPasswordForFacebook = driver.findElement(By.id("pass"));
         setPasswordForFacebook.click();
-        setPasswordForFacebook.sendKeys("test123test");
+        setPasswordForFacebook.sendKeys("set your valid password");
 
         WebElement facebookLoginButton = driver.findElement(By.id("loginbutton"));
         facebookLoginButton.click();
@@ -290,21 +290,21 @@ public class SigninTest {
     // Expectation: Login should be successful
     @Test
     public void TC09LoginWithGmail() throws InterruptedException {
-        System.out.println("after-1");
+        
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(2000, TimeUnit.MILLISECONDS);
+        
         WebElement loginWithGmailButton = driver.findElement(By.xpath("//span[contains(text(), 'Sign in with Google') and contains(@class, 'login__social-text login__social-google-text')]"));
         loginWithGmailButton.click();
         System.out.println(driver.getCurrentUrl());
-        System.out.println("after0");
+   
         System.out.flush();
         driver.manage().timeouts().implicitlyWait(2000, TimeUnit.MILLISECONDS);
         assertWaitRedirect("google");
-        System.out.println("after1");
+ 
         WebElement setEmailForGmail = assertWaitVisible(By.id("identifierId"));
         setEmailForGmail.click();
         setEmailForGmail.sendKeys("clarklisa686@gmail.com");
-        System.out.println("after2");
 
         WebElement forwardButton = driver.findElement(By.xpath("//span[contains(text(), 'İleri') and contains(@class, 'VfPpkd-vQzf8d')]"));
         forwardButton.click();
